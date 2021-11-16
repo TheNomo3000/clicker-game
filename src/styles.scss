@@ -21,6 +21,10 @@ body {
   justify-items: center;
 }
 
+.page-container {
+  height: calc(100% - 60px);
+}
+
 .responsive-img {
   width: 80%;
 }

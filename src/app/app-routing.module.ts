@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'game',
     loadChildren: () => import('./presentation/game/game.module').then(module => module.GameModule),
     canActivate: [IsGameLoadGuard]
+  },
+  {
+    path: 'stats',
+    loadChildren: () => import('./presentation/stats/stats.module').then(module => module.StatsModule),
   }
 ];
 

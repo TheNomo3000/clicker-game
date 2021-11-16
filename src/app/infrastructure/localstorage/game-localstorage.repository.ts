@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GameRepository } from '../../domain/repositories/game.repository';
-import { map, Observable, of, switchMap } from 'rxjs';
+import { map, merge, mergeMap, Observable, of, switchMap, concat, forkJoin, take, takeLast } from 'rxjs';
 import { GameModel } from 'src/app/domain/models/game.model';
 import { GameType } from 'src/app/domain/models/game-type.enum';
 import { StorageMap } from '@ngx-pwa/local-storage';
@@ -46,9 +46,30 @@ export class GameLocalstorageRepository extends GameRepository {
   }
 
   updateItems(item: ItemType): Observable<GameModel> {
-    this.game.items[item] += 1;
+    if (this.game.items[item] === 0) {
+      this.game.items[item] = 1;
+    }
     this.game.clicks = this.game.clicks - (CONFIG.price[item] * this.game.items[item]);
+    this.game.items[item] += 1;
     return this.updateStorage(this.game);
+  }
+
+  getStats(): Observable<GameModel []> {
+    let all: GameModel [] = [];
+    return this.storage.keys()
+    .pipe(
+      mergeMap((key: string) => {
+        return this.storage.get(key) as Observable<GameModel>;
+      }),
+      map((game) => {
+        all.push(game);
+        return all
+      }),
+      takeLast(1),
+      map((games) => {
+        return games.sort( (a, b) => (b.clicks - a.clicks))
+      })
+    );
   }
 
   private checkIsGameAlreadyExists(name: string): Observable<GameModel> {

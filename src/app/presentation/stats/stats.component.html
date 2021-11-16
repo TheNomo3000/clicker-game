@@ -1,0 +1,12 @@
+<app-header [title]="'Score Table'"></app-header>
+
+<div class="grid-center">
+  <div class="stat-item stat-header">
+    <p>Name</p>
+    <p>Score</p>
+  </div>
+  <div *ngFor="let game of games" class="stat-item">
+    <p>{{ game.name }}</p>
+    <p>{{ game.clicks }}</p>
+  </div>
+</div>

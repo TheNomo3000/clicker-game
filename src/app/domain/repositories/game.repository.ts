@@ -13,4 +13,5 @@ export abstract class GameRepository {
   abstract loadGame(name: string): Observable<GameModel>;
   abstract updateClicks(clicks: number): Observable<GameModel>;
   abstract updateItems(item: ItemType): Observable<GameModel>;
+  abstract getStats(): Observable<GameModel []>;
 }
