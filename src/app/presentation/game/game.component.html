@@ -2,7 +2,10 @@
 
 <div class="game-container">
   <div class="clicker-container">
-    <button class="clicker-btn" (click)="addClick()">{{ game.clicks > 0 ? game.clicks : 'Start' }}</button>
+    <div class="container-relative">
+      <img src="./assets/images/owl2.png" alt="owl" class="game-img">
+      <button class="clicker-btn" (click)="addClick()">{{ game.clicks > 0 ? game.clicks : 'Start' }}</button>
+    </div>
   </div>
   <div class="items-container">
     <div class="item">

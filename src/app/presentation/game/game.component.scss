@@ -8,25 +8,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .clicker-btn {
-      font-family: "Kanit", sans-serif;
-      font-weight: bold;
-      border-radius: 50%;
-      width: 250px;
-      height: 250px;
-      border: 5px solid $gray-3;
-      background-color: transparent;
-      color: $white;
-      font-size: 10vw;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-      &:hover {
-        border: 5px solid $white;
+    .container-relative {
+      position: relative;
+      .game-img {
+        max-width: 50px;
+        position: absolute;
+        top: -70px;
+        left: 100px;
+      }
+      .clicker-btn {
+        font-family: "Kanit", sans-serif;
+        font-weight: bold;
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        border: 5px solid $gray-3;
         background-color: transparent;
+        color: $white;
+        font-size: 10vw;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        &:hover {
+          border: 5px solid $white;
+          background-color: transparent;
+        }
       }
     }
   }
@@ -67,7 +76,8 @@
 }
 
 @media (min-width: 768px) {
-  .clicker-btn, .item-btn-active {
+  .clicker-btn,
+  .item-btn-active {
     cursor: pointer;
   }
 }

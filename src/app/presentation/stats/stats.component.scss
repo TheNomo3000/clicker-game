@@ -1,12 +1,19 @@
-@import '../../../variables';
+@import "../../../variables";
 
 .grid-center {
   padding-top: 25px;
 }
 
+.stats-img {
+  max-width: 50px;
+  position: absolute;
+  top: -66px;
+  right: 13px;
+}
+
 .stat-item {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   width: 65%;
   max-width: 500px;
@@ -14,6 +21,9 @@
   border: 1px solid $white;
   background-color: $gray-2;
   text-align: center;
+  &:first-child {
+    position: relative;
+  }
   &:last-child {
     border-radius: 0px 0px 20px 20px;
   }
