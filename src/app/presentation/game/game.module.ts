@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GameComponent } from './game.component';
 import { Routes, RouterModule } from '@angular/router';
-import { HeaderModule } from './header/header.module';
+import { HeaderModule } from '../shared/header/header.module';
 
 const routes: Routes = [
   {
@@ -10,7 +10,6 @@ const routes: Routes = [
     component: GameComponent
   }
 ]
-
 
 @NgModule({
   declarations: [

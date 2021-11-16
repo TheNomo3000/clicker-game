@@ -1,4 +1,7 @@
-<div class="h-100 grid-center">
+
+<app-header></app-header>
+
+<div class="grid-center page-container">
   <form class="form-name" [formGroup]="form" (ngSubmit)="sendUsername()">
     <img src="./assets/images/owl.png" alt="owl" class="home-img">
     <input type="text" formControlName="name" placeholder="Name" name="name" id="name" autocomplete="new-name">

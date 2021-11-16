@@ -12,16 +12,18 @@
       font-family: "Kanit", sans-serif;
       font-weight: bold;
       border-radius: 50%;
-      padding: 25%;
-      max-width: 250px;
-      max-height: 250px;
+      width: 250px;
+      height: 250px;
       border: 5px solid $gray-3;
       background-color: transparent;
       color: $white;
-      font-size: 5rem;
-      display: flex;
+      font-size: 10vw;
       justify-content: center;
       align-items: center;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
       &:hover {
         border: 5px solid $white;
         background-color: transparent;
@@ -48,14 +50,12 @@
         }
       }
       .item-btn-active {
-        border: 3px solid $blue-1;
         background-color: $blue-2;
         text-align: center;
         border-radius: 64px;
-        padding: 10px;
+        padding: 10px 20px;
         color: $black;
         &:hover {
-          border: 3px solid $blue-2;
           background-color: $blue-1;
         }
         span {
