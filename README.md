@@ -1,27 +1,39 @@
-# ClickerGame
+# Owl Clicker Game
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
+Es un juego basado en el clicker y en el cookie clicker, su finalidad es conseguir puntos, 1 punto = 1 click, no hay fin.
+## Proyecto
 
-## Development server
+El proyecto está hecho en `Angular 13`, además es una PWA, para estó se usa el paquete de `@angular/pwa`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+La estructura del proyecto está hecha para tener una división clara entre capas, para facilitar la escalibilidad y la tolerancia a cambios. (se basa en Hexagonal architecture)
 
-## Code scaffolding
+Se necesitaba poder almacenar los datos de las partidas en local, para esto he usado un paquete que simplifica la tarea `@ngx-pwa/local-storage` 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para los tests se ha usado `karma` con `jasmine`
 
-## Build
+El proyecto se encuentra alojado en `netlify` en la siguiente url [Owl Clicker Game](https://owl-clicker-game.netlify.app)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Se ha intentado ser lo más claro con el código y limpio, aunque tiene un buen margen de mejora.
+## Ejecución
 
-## Running unit tests
+- Ejecutar en local => `ng serve`
+- Ejecutar tests => `ng test`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Home
+Un pequeño formulario, donde pondremos nuestro nombre y accederemos a nuestra partida
 
-## Running end-to-end tests
+Routing: `/home`
+## Game
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+La pantalla de game, tiene un botón circular en el centro que es el clicker, arriba podemos ver un botón para volver y el nombre de usuario
 
-## Further help
+Además podemos comprar un autoclicker que nos da 1 click cada 100ms
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Routing: `/game`
+## Stats
+
+En la pantalla de stats se reunen los datos de todos los usuario (local) que haya y se muestran ordenados.
+
+Routing: `/stats`
+
+
