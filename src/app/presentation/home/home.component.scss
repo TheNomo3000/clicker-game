@@ -1,0 +1,31 @@
+.form-name {
+  display: grid;
+  gap: 15px;
+  max-width: 400px;
+  min-width: 250px;
+  align-items: center;
+  width: 50%;
+  input {
+    border-radius: 4px;
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    height: 2em;
+  }
+
+  button {
+    height: 35px;
+    border-radius: 4px;
+  }
+
+  .button {
+    border: 1px solid #4CAF50;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .button:hover {
+    background-color: #46a349;
+    color: white;
+  }
+}

@@ -1,0 +1,6 @@
+<div class="container h-100 grid-center">
+  <form class="form-name" [formGroup]="form" (ngSubmit)="sendUsername()">
+    <input type="text" formControlName="name" placeholder="Name">
+    <button type="submit" [ngClass]="{'button': form.valid}"  [disabled]="!form.valid">Entrar</button>
+  </form>
+</div>
