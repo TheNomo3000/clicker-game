@@ -12,11 +12,6 @@ body {
   background-color: $black;
 }
 
-.container {
-  padding: $padding;
-  margin: $margin;
-}
-
 .grid-center {
   display: grid;
   grid-template-columns: 1fr;
