@@ -1,0 +1,5 @@
+<app-header [game]="game"></app-header>
+
+<button (click)="addClick()">Update {{ game.clicks }}</button>
+
+<button (click)="buyItem(itemType.autoclicker)" [disabled]="game.clicks < autoclickerPrice">AutoClicker: price ({{autoclickerPrice}})</button>
