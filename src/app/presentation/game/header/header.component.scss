@@ -1,0 +1,37 @@
+@import '../../../../variables';
+
+.header {
+  display: grid;
+  height: 50px;
+  align-items: center;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 5px 10px;
+  .button {
+    background-color: $gray-1;
+    color: $black;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    max-width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .name {
+    display: flex;
+    color: $white;
+    padding: 5px 10px;
+    justify-content: center;
+  }
+  .back {
+    display: flex;
+    padding: 5px 10px;
+    justify-content: flex-start;
+  }
+  .menu {
+    display: flex;
+    padding: 5px 10px;
+    justify-content: flex-end;
+  }
+}
