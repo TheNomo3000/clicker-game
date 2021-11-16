@@ -1,5 +1,14 @@
 <app-header [game]="game"></app-header>
 
-<button (click)="addClick()">Update {{ game.clicks }}</button>
-
-<button (click)="buyItem(itemType.autoclicker)" [disabled]="game.clicks < autoclickerPrice">AutoClicker: price ({{autoclickerPrice}})</button>
+<div class="game-container">
+  <div class="clicker-container">
+    <button class="clicker-btn" (click)="addClick()">{{ game.clicks > 0 ? game.clicks : 'Start' }}</button>
+  </div>
+  <div class="items-container">
+    <div class="item">
+      <button class="item-btn" [ngClass]="{'item-btn-active': game.clicks > autoclickerPrice}" (click)="buyItem(itemType.autoclicker)" [disabled]="game.clicks < autoclickerPrice">
+        <span>LVL {{ game.items.autoclicker }} <br> AUTOCLICKER <br> NEXT LEVEL: {{autoclickerPrice}} CLICKS</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -17,8 +17,8 @@ export class GameComponent implements OnInit, OnDestroy {
 
   game!: GameModel;
   itemType = ItemType;
-  itemInterval = interval(100);
-  autoclickerPrice = 100;
+  itemInterval = interval(CONFIG.itemTime);
+  autoclickerPrice = CONFIG.price.autoclicker;
 
   constructor(
     private gameService: GameService,
