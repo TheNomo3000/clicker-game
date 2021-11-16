@@ -46,8 +46,8 @@ export class GameLocalstorageRepository extends GameRepository {
   }
 
   updateItems(item: ItemType): Observable<GameModel> {
-    this.game.clicks = this.game.clicks - (CONFIG.price[item] * this.game.items[item]);
     this.game.items[item] += 1;
+    this.game.clicks = this.game.clicks - (CONFIG.price[item] * this.game.items[item]);
     return this.updateStorage(this.game);
   }
 
